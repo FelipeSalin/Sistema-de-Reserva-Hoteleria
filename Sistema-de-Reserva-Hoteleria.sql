@@ -79,3 +79,5 @@ CREATE TABLE transaccion (
     CONSTRAINT fk_trans_factura FOREIGN KEY (numfactura) REFERENCES factura(numfactura),
     CONSTRAINT fk_trans_metodo FOREIGN KEY (id_metodo_pago) REFERENCES metodo_pago(id_metodo_pago)
 );
+
+COMMIT;
