@@ -13,7 +13,7 @@ DROP TABLE hotel CASCADE CONSTRAINTS;
 CREATE TABLE hotel
 (
     hotel_id NUMERIC(4),
-    nombre VARCHAR2(30) NOT NULL,
+    nombre VARCHAR2(200) NOT NULL,
     direccion VARCHAR2(50) NOT NULL,
     catego VARCHAR(30) NOT NULL,
     CONSTRAINT pk_hot_id PRIMARY KEY (hotel_id)
@@ -23,8 +23,8 @@ CREATE TABLE habitacion
 (
     habitacion_id NUMERIC(3),
     hotel_hotel_id NUMERIC(4) NOT NULL,
-    tipo VARCHAR2(2) NOT NULL,
-    capacidad NUMERIC(2) NOT NULL,
+    tipo VARCHAR2(50) NOT NULL,
+    capacidad VARCHAR2(50) NOT NULL,
     precio NUMERIC(7) NOT NULL,
     CONSTRAINT pk_hab_id PRIMARY KEY (habitacion_id),
     CONSTRAINT fk_hab_hot FOREIGN KEY (hotel_hotel_id) REFERENCES hotel (hotel_id),
@@ -79,5 +79,54 @@ CREATE TABLE transaccion (
     CONSTRAINT fk_trans_factura FOREIGN KEY (numfactura) REFERENCES factura(numfactura),
     CONSTRAINT fk_trans_metodo FOREIGN KEY (id_metodo_pago) REFERENCES metodo_pago(id_metodo_pago)
 );
+
+-- Inserts
+
+INSERT INTO hotel
+    VALUES (1, 'Hotel Pacific Reef Santiago', 'Santiago 123', '4 estrellas');
+INSERT INTO hotel
+    VALUES (2, 'Hotel Pacific Reef Valdivia', 'Valdivia 123', '4 estrellas');
+INSERT INTO hotel
+    VALUES (3, 'Hotel Pacific Reef Viña del Mar', 'Viña del Mar 123', '4 estrellas');
+
+INSERT INTO habitacion
+    VALUES (001, '1', 'Turista', '4 Personas', 50000);
+INSERT INTO habitacion
+    VALUES (002, '2', 'Premium', '6 Personas', 100000);
+INSERT INTO habitacion
+    VALUES (003, '3', 'Turista', '4 Personas', 50000);
+    
+INSERT INTO cliente
+    VALUES (100, 'Diego', 'Lorca', 'dieloco@gmail.com', '+56912345678');
+INSERT INTO cliente
+    VALUES (101, 'Bastián', 'Peralta', 'bastianp@gmail.com', '+56912345679');
+INSERT INTO cliente
+    VALUES (102, 'Alonso', 'Soto', 'alonsoto@gmail.com', '+56912345670');
+    
+INSERT INTO reserva
+    VALUES (500, 100, 001, '20-04-2026', '24-04-2026', 4);
+INSERT INTO reserva
+    VALUES (501, 101, 002, '01-04-2026', '05-04-2026', 6);
+INSERT INTO reserva
+    VALUES (502, 102, 002, '10-03-2026', '13-03-2026', 4);
+    
+INSERT INTO metodo_pago
+    VALUES (1, 'Tarjeta de Crédito', 'Se realiza el pago con tarjeta de crédito');
+INSERT INTO metodo_pago
+    VALUES (2, 'Tarjeta de Débito', 'Se realiza el pago con tarjeta de débito');
+    
+INSERT INTO factura
+    VALUES (1000, 'Reserva de habitación por 4 días', 1, 200000);
+INSERT INTO factura
+    VALUES (1001, 'Reserva de habitación por 5 días', 2, 500000);
+INSERT INTO factura
+    VALUES (1002, 'Reserva de habitación por 3 días', 1, 150000);
+    
+INSERT INTO transaccion
+    VALUES (50, 1000, '11-04-2026', 200000, 1);
+INSERT INTO transaccion
+    VALUES (51, 1001, '28-03-2026', 500000, 2);
+INSERT INTO transaccion
+    VALUES (52, 1002, '02-03-2026', 150000, 1);
 
 COMMIT;
