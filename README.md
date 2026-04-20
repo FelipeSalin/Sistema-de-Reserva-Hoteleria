@@ -9,6 +9,9 @@ https://lucid.app/lucidchart/4341048f-7cc6-4987-94a8-6581de8f506f/edit?viewport_
 En el siguiente enlace se encuentra el archivo Trello con las épicas y sus respectivos requerimientos:
 https://trello.com/invite/b/69c79e4baf2db33a0e276d40/ATTIe5bbbc1b4118e6ac298f449606bdaeeb8B303F14/registro-de-reserva-hotelera
 
+En el siguiente enlace se encuentra el Roadmap realizado en Miro con la línea de tiempo que demorará la aplicación en estar lista:
+https://miro.com/welcomeonboard/TlRxNVUxWjRENzNLUlRyNVJYd2NJV01tTDh6T0U2Y3RpZTN6YnRGSDd2SUloS0xuaTFONjdvUHVsMnpyeHNGUFBvb3pHM20rZ0RTRXI2WFgxbk9Vd1Bvb3ZGYkJqdktudHRwb1laMGMxZG1yWmVtNTZQeEczZkY3MGZJZjIvMi90R2lncW1vRmFBVnlLcVJzTmdFdlNRPT0hdjE=?share_link_id=522024140780
+
 En el siguiente enlace se encuentra el archivo Figma en donde se encuentra el Prototipo de Diseño de Interfaz de la aplicación de reserva del Hotel:
 https://www.figma.com/design/dzAobutyNxOKzYDuTg2KZl/Hotel-Reservation-System--Community-?node-id=0-1&t=UmBUG2DvLHOVlHY5-1
 
