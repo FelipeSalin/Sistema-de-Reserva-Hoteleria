@@ -18,5 +18,5 @@ https://miro.com/welcomeonboard/TlRxNVUxWjRENzNLUlRyNVJYd2NJV01tTDh6T0U2Y3RpZTN6
 En el siguiente enlace se encuentra el archivo Figma en donde se encuentra el Prototipo de Diseño de Interfaz de la aplicación de reserva del Hotel:
 https://www.figma.com/design/dzAobutyNxOKzYDuTg2KZl/Hotel-Reservation-System--Community-?node-id=0-1&t=UmBUG2DvLHOVlHY5-1
 
-En el siguiente enlace se encuentra el drive de la semana 6, el cual contiene el archivo de respuesta Word, y el DOD:
-https://drive.google.com/drive/folders/1s56Bg1C5_szJoHSA1DJIkkU-PK2J5o9J?usp=sharing
+En el siguiente enlace se encuentra el drive de la semana 7, el cual contiene el archivo de respuesta Word, y los casos de prueba:
+https://drive.google.com/drive/folders/1pzFfF3koqvOIE3zygGGY2ktC4_tT4SH3?usp=sharing
