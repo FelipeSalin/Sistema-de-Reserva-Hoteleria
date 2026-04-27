@@ -20,3 +20,5 @@ https://www.figma.com/design/dzAobutyNxOKzYDuTg2KZl/Hotel-Reservation-System--Co
 
 En el siguiente enlace se encuentra el drive de la semana 7, el cual contiene el archivo de respuesta Word, y los casos de prueba:
 https://drive.google.com/drive/folders/1pzFfF3koqvOIE3zygGGY2ktC4_tT4SH3?usp=sharing
+
+Prueba de Commit en GitHub desktop
