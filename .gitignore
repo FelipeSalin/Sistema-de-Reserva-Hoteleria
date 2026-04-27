@@ -1,0 +1,8 @@
+.env
+tienda/settings.py
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*/migrations/*.pyc
+*/migrations/__pycache__/
+node_modules/
