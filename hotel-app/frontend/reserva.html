@@ -1,0 +1,29 @@
+<h2>Reserva</h2>
+
+<input id="cliente_id" placeholder="ID Cliente">
+<input id="habitacion_id" placeholder="ID Habitación">
+<input id="entrada" type="date">
+<input id="salida" type="date">
+<input id="personas" placeholder="Cantidad personas">
+
+<button onclick="reservar()">Reservar</button>
+
+<a href="login.html">Cerrar sesión</a>
+
+<script>
+function reservar() {
+    fetch("http://localhost:3000/reserva", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            cliente_id: cliente_id.value,
+            habitacion_id: habitacion_id.value,
+            fecha_entrada: entrada.value,
+            fecha_salida: salida.value,
+            cantidad_personas: personas.value
+        })
+    })
+    .then(res => res.text())
+    .then(data => alert(data));
+}
+</script>
