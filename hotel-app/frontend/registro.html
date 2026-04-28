@@ -1,0 +1,29 @@
+<h2>Registro</h2>
+
+<input id="id" placeholder="ID">
+<input id="nombre" placeholder="Nombre">
+<input id="apellido" placeholder="Apellido">
+<input id="correo" placeholder="Correo">
+<input id="telefono" placeholder="Teléfono">
+
+<button onclick="registrar()">Registrar</button>
+
+<a href="login.html">Volver a login</a>
+
+<script>
+function registrar() {
+    fetch("http://localhost:3000/cliente", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            cliente_id: id.value,
+            nombre: nombre.value,
+            apellido: apellido.value,
+            correo_electronico: correo.value,
+            telefono: telefono.value
+        })
+    })
+    .then(res => res.text())
+    .then(data => alert(data));
+}
+</script>
