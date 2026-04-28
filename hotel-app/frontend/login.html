@@ -1,0 +1,26 @@
+<h2>Login</h2>
+
+<input id="correo" placeholder="Correo">
+
+<button onclick="login()">Ingresar</button>
+
+<a href="registro.html">¿No tienes cuenta? Regístrate aquí</a>
+
+<script>
+function login() {
+    fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            correo: document.getElementById("correo").value
+        })
+    })
+    .then(res => res.text())
+    .then(data => {
+        alert(data);
+        if(data === "Login correcto"){
+            window.location.href = "reserva.html";
+        }
+    });
+}
+</script>
