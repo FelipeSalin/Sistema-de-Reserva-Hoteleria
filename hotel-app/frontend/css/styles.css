@@ -43,6 +43,10 @@ input {
     /* Texto oscuro para legibilidad sobre fondo gris */
 }
 
+.navbar {
+    background-color: #ddd;
+}
+
 /* 4. Botones y Acciones */
 
 .social-btn {
