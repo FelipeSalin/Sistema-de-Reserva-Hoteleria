@@ -1,14 +1,126 @@
-<h2>Registro</h2>
+<!DOCTYPE html>
+<html lang="es">
 
-<input id="id" placeholder="ID">
-<input id="nombre" placeholder="Nombre">
-<input id="apellido" placeholder="Apellido">
-<input id="correo" placeholder="Correo">
-<input id="telefono" placeholder="Teléfono">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Hotel App</title>
+    <style>
+        body {
+            background-color: #121212;
+            /* Fondo oscuro de la imagen */
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-<button onclick="registrar()">Registrar</button>
+        .login-card {
+            width: 320px;
+            text-align: center;
+            padding: 20px;
+        }
 
-<a href="login.html">Volver a login</a>
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background-color: #333;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: none;
+            background-color: #ccc;
+            /* Gris claro de los inputs en tu imagen */
+            box-sizing: border-box;
+        }
+
+        .btn-ingresar {
+            width: 100%;
+            padding: 12px;
+            background-color: #0000FF;
+            /* Azul vibrante de la imagen */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .social-btn {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .facebook {
+            background-color: #004a7c;
+            color: white;
+        }
+
+        .google {
+            background-color: white;
+            color: black;
+        }
+
+        .links {
+            font-size: 0.8em;
+            margin: 15px 0;
+            color: #aaa;
+            text-decoration: none;
+            display: block;
+        }
+    </style>
+</head>
+
+<div class="login-card">
+        <h2>¿Nuevo usuario?</h2>
+        <h3>Rellena el formulario para crear tu cuenta</h3>
+
+        <div class="avatar">👤</div>
+
+        <label>Nombre completo:</label>
+        <input type="text" id="nombre">
+
+        <label>Correo electrónico:</label>
+        <input type="text" id="correo">
+
+        <label>Número de teléfono:</label>
+        <input type="text" id="telefono">
+
+        <label>GéNERO:</label>
+        <input type="text" id="genero">
+
+        <label>Contraseña:</label>
+        <input type="password" id="password">
+
+        <label>Repetir contraseña:</label>
+        <input type="password" id="password2">
+
+        <button class="btn-ingresar" onclick="registrar()">Registrarse</button>
+
+        <a href="login.html" class="links">¿Ya tienes una cuenta? Ingresa acá</a>
+    </div>
 
 <script>
 function registrar() {
@@ -18,9 +130,10 @@ function registrar() {
         body: JSON.stringify({
             cliente_id: id.value,
             nombre: nombre.value,
-            apellido: apellido.value,
             correo_electronico: correo.value,
-            telefono: telefono.value
+            telefono: telefono.value,
+            genero: genero.value,
+            contraseña: contraseña.value
         })
     })
     .then(res => res.text())
