@@ -1,26 +1,142 @@
-<h2>Login</h2>
+<!DOCTYPE html>
+<html lang="es">
 
-<input id="correo" placeholder="Correo">
-
-<button onclick="login()">Ingresar</button>
-
-<a href="registro.html">¿No tienes cuenta? Regístrate aquí</a>
-
-<script>
-function login() {
-    fetch("http://localhost:3000/login", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({
-            correo: document.getElementById("correo").value
-        })
-    })
-    .then(res => res.text())
-    .then(data => {
-        alert(data);
-        if(data === "Login correcto"){
-            window.location.href = "reserva.html";
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Hotel App</title>
+    <style>
+        body {
+            background-color: #121212;
+            /* Fondo oscuro de la imagen */
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
-    });
-}
-</script>
+
+        .login-card {
+            width: 320px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background-color: #333;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: none;
+            background-color: #ccc;
+            /* Gris claro de los inputs en tu imagen */
+            box-sizing: border-box;
+        }
+
+        .btn-ingresar {
+            width: 100%;
+            padding: 12px;
+            background-color: #0000FF;
+            /* Azul vibrante de la imagen */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .social-btn {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .facebook {
+            background-color: #004a7c;
+            color: white;
+        }
+
+        .google {
+            background-color: white;
+            color: black;
+        }
+
+        .links {
+            font-size: 0.8em;
+            margin: 15px 0;
+            color: #aaa;
+            text-decoration: none;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-card">
+        <h2>Ingresa a tu cuenta</h2>
+
+        <div class="avatar">👤</div>
+
+        <label>Nombre de usuario:</label>
+        <input type="text" id="correo">
+
+        <label>Contraseña:</label>
+        <input type="password" id="password">
+
+        <a href="#" class="links">Olvidé usuario/contraseña</a>
+
+        <button class="btn-ingresar" onclick="login()">Ingresar</button>
+
+        <a href="registro.html" class="links">¿No tienes cuenta? Regístrate</a>
+
+        <p>o</p>
+
+        <button class="social-btn facebook">Ingresa con Facebook</button>
+        <button class="social-btn google">Ingresa con Google</button>
+    </div>
+
+    <script>
+        async function login() {
+            const correo = document.getElementById("correo").value;
+            const password = document.getElementById("password").value;
+
+            const res = await fetch("http://localhost:3000/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ correo, password })
+            });
+
+            const data = await res.text();
+            if (data === "Login correcto") {
+                window.location.href = "reserva.html";
+            } else {
+                alert("Error: " + data);
+            }
+        }
+    </script>
+</body>
+
+</html>
