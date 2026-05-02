@@ -2,6 +2,13 @@ const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 
+const path = require('path');
+
+// Esto le dice a Express que entregue los archivos de estas carpetas automáticamente
+app.use('/CSS', express.static(path.join(__dirname, '../CSS')));
+app.use('/assets', express.static(path.join(__dirname, '../assets')));
+app.use(express.static(path.join(__dirname, '../frontend')));
+
 const app = express();
 app.use(cors());
 app.use(express.json());
