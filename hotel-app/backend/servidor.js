@@ -9,7 +9,7 @@ app.use('/CSS', express.static(path.join(__dirname, '../CSS')));
 app.use('/assets', express.static(path.join(__dirname, '../assets')));
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-//imagen de habitacione en reserva 
+/*//imagen de habitacione en reserva 
 function actualizarPreview() {
     const id = document.getElementById("habitacion_id").value;
     const imgElement = document.getElementById("room-img");
@@ -35,7 +35,7 @@ function actualizarPreview() {
         titleElement.innerText = "Habitación no encontrada";
         descElement.innerText = "Ingresa un ID del 1 al 5";
     }
-}
+}*/
 
 
 
@@ -109,7 +109,7 @@ app.post('/login', (req, res) => {
     });
 });
 
-// Ver las reservas
+/*/// Ver las reservas
 app.get('/reservas', (req, res) => {
     db.query("SELECT * FROM reserva", (err, result) => {
         if (err) return res.send(err);
