@@ -5,6 +5,7 @@ body {
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -115,4 +116,8 @@ input {
 
 .links:hover {
     text-decoration: underline;
+}
+
+footer {
+    position: static;
 }
