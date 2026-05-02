@@ -1,29 +1,114 @@
-<h2>Reserva</h2>
+<!DOCTYPE html>
+<html lang="es">
 
-<input id="cliente_id" placeholder="ID Cliente">
-<input id="habitacion_id" placeholder="ID Habitación">
-<input id="entrada" type="date">
-<input id="salida" type="date">
-<input id="personas" placeholder="Cantidad personas">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva - Hotel App</title>
+    <!-- Corregimos la ruta: sube un nivel y entra a CSS en mayúsculas -->
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
 
-<button onclick="reservar()">Reservar</button>
+<body>
 
-<a href="login.html">Cerrar sesión</a>
+    <div class="login-card" style="width: 450px;">
+        <h2>Reserva tu habitación</h2>
 
-<script>
-function reservar() {
-    fetch("http://localhost:3000/reserva", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({
-            cliente_id: cliente_id.value,
-            habitacion_id: habitacion_id.value,
-            fecha_entrada: entrada.value,
-            fecha_salida: salida.value,
-            cantidad_personas: personas.value
-        })
-    })
-    .then(res => res.text())
-    .then(data => alert(data));
-}
-</script>
+        <!-- Vista previa dinámica -->
+        <div class="habitacion-preview">
+            <img src="../assets/imagen/suite1.png" alt="Vista previa" id="room-img">
+            <div class="room-info">
+                <span id="room-title">Selecciona una habitación</span>
+                <p id="room-desc" class="room-desc">Escribe el ID para ver detalles</p>
+            </div>
+        </div>
+
+        <!-- Todo el formulario unificado -->
+        <form id="reservaForm">
+
+            <div class="input-group">
+                <label for="habitacion_id">ID Habitación:</label>
+                <!-- oninput activa la función de cambio de imagen -->
+                <input type="text" id="habitacion_id" placeholder="Ej: 1, 2, 3..." oninput="actualizarPreview()"
+                    required>
+            </div>
+
+            <div class="input-group">
+                <label for="cliente_id">ID Cliente:</label>
+                <input type="text" id="cliente_id" placeholder="Tu identificador" required>
+            </div>
+
+            <div style="display: flex; gap: 10px;">
+                <div style="flex: 1; text-align: left;">
+                    <label for="entrada">Fecha Entrada:</label>
+                    <input type="date" id="entrada" required>
+                </div>
+                <div style="flex: 1; text-align: left;">
+                    <label for="salida">Fecha Salida:</label>
+                    <input type="date" id="salida" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="personas">Cantidad de personas:</label>
+                <input type="number" id="personas" min="1" max="5" placeholder="1" required>
+            </div>
+
+            <button type="button" class="btn-ingresar" onclick="reservar()">Confirmar Reserva</button>
+        </form>
+
+        <a href="login.html" class="links">Cerrar sesión</a>
+    </div>
+
+    <script>
+        // Función para cambiar imagen y textos dinámicamente
+        function actualizarPreview() {
+            const id = document.getElementById("habitacion_id").value;
+            const imgElement = document.getElementById("room-img");
+            const titleElement = document.getElementById("room-title");
+            const descElement = document.getElementById("room-desc");
+
+            const habitaciones = {
+                "1": { nombre: "Suite Junior", img: "suite1.png", desc: "Cama matrimonial, vista al jardín." },
+                "2": { nombre: "Suite Ejecutiva", img: "suite2.png", desc: "Escritorio de trabajo, cama King." },
+                "3": { nombre: "Suite Presidencial", img: "suite3.png", desc: "Jacuzzi privado y vista al mar." },
+                "4": { nombre: "Suite Familiar", img: "suite4.png", desc: "Dos habitaciones conectadas." },
+                "5": { nombre: "Suite Master", img: "suite5.png", desc: "Máximo lujo y confort." }
+            };
+
+            if (habitaciones[id]) {
+                imgElement.src = `../assets/imagen/${habitaciones[id].img}`;
+                titleElement.innerText = habitaciones[id].nombre;
+                descElement.innerText = habitaciones[id].desc;
+            } else {
+                imgElement.src = "../assets/imagen/suite1.png"; // Imagen por defecto
+                titleElement.innerText = "Selecciona una habitación";
+                descElement.innerText = "Escribe el ID (1 al 5) para ver detalles";
+            }
+        }
+
+        async function reservar() {
+            const reservaData = {
+                cliente_id: document.getElementById("cliente_id").value,
+                habitacion_id: document.getElementById("habitacion_id").value,
+                fecha_entrada: document.getElementById("entrada").value,
+                fecha_salida: document.getElementById("salida").value,
+                cantidad_personas: document.getElementById("personas").value
+            };
+
+            try {
+                const res = await fetch("http://localhost:3000/reserva", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(reservaData)
+                });
+                const data = await res.text();
+                alert(data);
+            } catch (error) {
+                alert("Error al conectar con el servidor");
+            }
+        }
+    </script>
+</body>
+
+</html>
