@@ -14,7 +14,16 @@
 </head>
 
 <body>
-    
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'login' %}">
+                Pacific Reef
+            </a>
+            <img src="{% static 'assets/iconos/icono1.png' %}" alt="Logo" width="80" class="me-2 rounded">
+        </div>
+    </nav>
+
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <!-- Tarjeta Principal -->
         <div class="card bg-dark text-white p-4 shadow-lg"
@@ -55,7 +64,7 @@
                     </button>
                 </form>
     
-                <a href="registro.html" class="text-decoration-none small text-info d-block mb-3">¿No tienes una cuenta?
+                <a href="{% url 'registro' %}" class="text-decoration-none small text-info d-block mb-3">¿No tienes una cuenta?
                     Regístrate</a>
     
                 <div class="d-flex align-items-center my-3">

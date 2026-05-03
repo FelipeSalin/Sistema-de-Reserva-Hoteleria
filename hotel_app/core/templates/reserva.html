@@ -17,30 +17,29 @@
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow">
         <div class="container">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="{% url 'home_cliente' %}">
                 Pacific Reef
             </a>
+            <img src="{% static 'assets/iconos/icono1.png' %}" alt="Logo" width="80" class="me-2 rounded">
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navBarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse bg-white" id="navBarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home_cliente' %}">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Mi Perfil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/">Cerrar Sesión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Cerrar Sesión</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
-<body>
 
     <div class="login-card" style="width: 450px;">
         <h2>Reserva tu habitación</h2>
 
         <!-- Vista previa dinámica -->
         <div class="habitacion-preview">
-            <img src="../assets/imagen/suite1.png" alt="Vista previa" id="room-img">
+            <img src="{% static 'assets/suite1.png' %}" alt="Vista previa" id="room-img">
             <div class="room-info">
                 <span id="room-title">Selecciona una habitación</span>
                 <p id="room-desc" class="room-desc">Escribe el ID para ver detalles</p>

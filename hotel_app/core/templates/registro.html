@@ -12,27 +12,17 @@
     <link rel="stylesheet" href="{% static 'CSS/styles.css' %}">
 </head>
 
-<body>
+
+<body class="bg-dark text-white d-flex flex-column min-vh-100">
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow">
         <div class="container">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="{% url 'registro' %}">
                 Pacific Reef
             </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navBarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse bg-white" id="navBarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Mi Perfil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/">Cerrar Sesión</a></li>
-                </ul>
-            </div>
+            <img src="{% static 'assets/iconos/icono1.png' %}" alt="Logo" width="80" class="me-2 rounded">
         </div>
     </nav>
-
-<body class="bg-dark text-white d-flex flex-column min-vh-100">
 
     <!-- Contenedor Principal Centrado -->
     <div class="container d-flex flex-grow-1 justify-content-center align-items-center mt-5">
@@ -44,7 +34,7 @@
                 <h3 class="h6 text-secondary mb-4">Rellena el formulario para crear tu cuenta</h3>
 
                 <div class="avatar mx-auto mb-4 d-flex align-items-center justify-content-center"
-                    style="width: 80px; height: 80px; background-color: #242424; border-radius: 50%; font-size: 40px;">
+                    style="width: 100px; height: 100px; background-color: #faf8f8; border-radius: 50%; font-size: 50px;">
                     👤
                 </div>
 
@@ -136,14 +126,15 @@
                 .catch(err => alert("Error de conexión con el servidor"));
         }
     </script>
-<!-- FOOTER -->
-<footer class="mt-auto py-3 bg-black text-center border-top border-secondary text-secondary">
-    <p class="mb-1 small">© 2023 Hotel Pacific Reef. Todos los derechos reservados.</p>
-    <p class="mb-1 small"><a href="mailto:accesorios@tienda.com"
-            class="text-decoration-none text-secondary">¡Contáctanos a través de nuestro email!</a></p>
-    <p class="mb-0 small"><a href="tel:+56912345678" class="text-decoration-none text-secondary">Llámanos al:
-            +56912345678</a></p>
-</footer>
+
+    <!-- FOOTER -->
+    <footer class="mt-auto py-3 bg-black text-center border-top border-secondary text-secondary">
+        <p class="mb-1 small">© 2023 Hotel Pacific Reef. Todos los derechos reservados.</p>
+        <p class="mb-1 small"><a href="mailto:accesorios@tienda.com"
+                class="text-decoration-none text-secondary">¡Contáctanos a través de nuestro email!</a></p>
+        <p class="mb-0 small"><a href="tel:+56912345678" class="text-decoration-none text-secondary">Llámanos al:
+                +56912345678</a></p>
+    </footer>
 
 </body>
 
