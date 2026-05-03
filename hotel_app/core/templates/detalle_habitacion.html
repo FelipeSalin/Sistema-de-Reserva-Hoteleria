@@ -1,0 +1,240 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disponibilidad Habitación 013</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .filter-bar {
+            background-color: #d1d1d1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .filter-input {
+            border: none;
+            background: transparent;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .btn-filtrar {
+            background-color: #34a835;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-weight: bold;
+        }
+
+        .main-img {
+            border-radius: 30px;
+            width: 100%;
+            height: auto;
+        }
+
+        .thumb-img {
+            border-radius: 10px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .thumb-more {
+            position: relative;
+        }
+
+        .thumb-more span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+
+        .table-custom {
+            background-color: #d1d1d1;
+            color: #000;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .table-custom th {
+            background-color: #bababa;
+            border: 1px solid #999;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .table-custom td {
+            border: 1px solid #999;
+            padding: 15px;
+            vertical-align: top;
+            font-size: 0.85rem;
+        }
+
+        .price-tag {
+            background-color: #0000ff;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .btn-reserve {
+            background-color: #34a835;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        footer {
+            border-top: 1px solid #333;
+            padding-top: 40px;
+            margin-top: 50px;
+        }
+
+        .social-icons i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container py-4 text-center">
+        <!-- Encabezado -->
+        <h1 class="h3">Disponibilidad Habitación 013</h1>
+        <p class="small text-secondary">Find exclusive Genius rewards in every corner of the world!<br>
+            From cheap hotels to luxury rooms and everything in between</p>
+
+        <!-- Barra de Filtros -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <div class="d-flex filter-bar">
+                    <input type="text" class="filter-input" placeholder="Fecha de ingreso">
+                    <div class="vr"></div>
+                    <input type="text" class="filter-input" placeholder="Fecha de salida">
+                    <button class="btn-filtrar">FILTRAR</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Título Habitación -->
+        <h2 class="h4">"Habitación 013"</h2>
+        <p class="small text-secondary">Equipamiento</p>
+
+        <!-- Galería -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-10">
+                <img src="https://via.placeholder.com/800x450" class="main-img mb-3" alt="Habitación Principal">
+                <div class="row g-2">
+                    <div class="col-3"><img src="https://via.placeholder.com/200x120" class="thumb-img"></div>
+                    <div class="col-3"><img src="https://via.placeholder.com/200x120" class="thumb-img"></div>
+                    <div class="col-3"><img src="https://via.placeholder.com/200x120" class="thumb-img"></div>
+                    <div class="col-3 thumb-more">
+                        <img src="https://via.placeholder.com/200x120" class="thumb-img">
+                        <span>+20 fotos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla de Detalles -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-11">
+                <table class="table-custom w-100">
+                    <thead>
+                        <tr>
+                            <th width="25%">Tipo de habitación</th>
+                            <th width="20%">Número de huéspedes</th>
+                            <th width="25%">Precio por 3 noches</th>
+                            <th width="30%"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Habitación turista</strong>
+                                <ul class="text-start mt-2 px-3" style="list-style-type: square;">
+                                    <li>1 cama de dos plazas</li>
+                                    <li>Tina de baño</li>
+                                    <li>Aire acondicionado</li>
+                                    <li>Baño privado</li>
+                                    <li>Smart TV / WiFi gratis</li>
+                                    <li>Artículos de aseo</li>
+                                    <li>Escritorio / Estufa</li>
+                                    <li>Vista a la ciudad</li>
+                                </ul>
+                            </td>
+                            <td class="text-center align-middle">2</td>
+                            <td class="text-center">
+                                <span class="text-decoration-line-through text-danger">$114.500</span><br>
+                                <strong>$87.500</strong><br>
+                                <small class="text-muted">Incluye impuestos y cargos</small>
+                            </td>
+                            <td class="text-center align-middle">
+                                <div class="price-tag">$87.500</div>
+                                <button class="btn-reserve">Reservar y pagar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row text-start align-items-center">
+                <div class="col-md-4 text-center">
+                    <img src="https://via.placeholder.com/150x80?text=Pacific+Reef" alt="Logo" class="mb-3">
+                </div>
+                <div class="col-md-4">
+                    <h6 class="fw-bold">Quick links</h6>
+                    <ul class="list-unstyled small">
+                        <li>Home</li>
+                        <li>View hotels</li>
+                        <li>Room Reservation</li>
+                        <li>About us</li>
+                        <li>Contact us</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h6 class="fw-bold">Download the app</h6>
+                    <p class="small text-secondary">Find, book and explore our upgraded rooms in moments.</p>
+                    <div class="bg-light text-dark p-2 rounded d-inline-block">
+                        <small>Get the App</small>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 pb-4">
+                <p class="small text-secondary">© 2024 Hotel Pacific Reef. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
