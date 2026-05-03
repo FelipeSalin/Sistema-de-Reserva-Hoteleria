@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,77 +6,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - Hotel App</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tu CSS Personalizado -->
+    <link rel="stylesheet" href="{% static 'CSS/styles.css' %}">
 </head>
 
-<body>
+<body class="bg-dark text-white d-flex flex-column min-vh-100">
 
-    <div class="login-card">
-        <h2>¿Nuevo usuario?</h2>
-        <h3>Rellena el formulario para crear tu cuenta</h3>
+    <!-- Contenedor Principal Centrado -->
+    <div class="container d-flex flex-grow-1 justify-content-center align-items-center mt-5">
 
-        <div class="avatar">👤</div>
+        <div class="card bg-dark text-white p-4 shadow-lg border border-secondary"
+            style="width: 100%; max-width: 500px; border-radius: 20px;">
+            <div class="card-body text-center">
+                <h2 class="card-title h4">¿Nuevo usuario?</h2>
+                <h3 class="h6 text-secondary mb-4">Rellena el formulario para crear tu cuenta</h3>
 
-        <label>Nombre completo:</label>
-        <input type="text" id="nombre">
+                <div class="avatar mx-auto mb-4 d-flex align-items-center justify-content-center"
+                    style="width: 80px; height: 80px; background-color: #242424; border-radius: 50%; font-size: 40px;">
+                    👤
+                </div>
 
-        <label>Correo electrónico:</label>
-        <input type="text" id="correo">
+                <form id="registroForm" class="text-start">
+                    <div class="mb-3">
+                        <label class="form-label small text-secondary">Nombre completo:</label>
+                        <input type="text" class="form-control bg-secondary bg-opacity-25 text-white border-0"
+                            id="nombre" required>
+                    </div>
 
-        <label>Número de teléfono:</label>
-        <input type="text" id="telefono">
+                    <div class="mb-3">
+                        <label class="form-label small text-secondary">Correo electrónico:</label>
+                        <input type="email" class="form-control bg-secondary bg-opacity-25 text-white border-0"
+                            id="correo" required>
+                    </div>
 
-        <label>Género:</label>
-        <select id="genero">
-            <option value="">Seleccionar...</option>
-            <option value="femenino">Femenino</option>
-            <option value="masculino">Masculino</option>
-            <option value="otro">Otro</option>
-        </select>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label small text-secondary">Teléfono:</label>
+                            <input type="tel" class="form-control bg-secondary bg-opacity-25 text-white border-0"
+                                id="telefono">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small text-secondary">Género:</label>
+                            <select id="genero" class="form-select bg-secondary bg-opacity-25 text-white border-0">
+                                <option value="" class="text-dark">Seleccionar...</option>
+                                <option value="femenino" class="text-dark">Femenino</option>
+                                <option value="masculino" class="text-dark">Masculino</option>
+                                <option value="otro" class="text-dark">Otro</option>
+                            </select>
+                        </div>
+                    </div>
 
-        <br>
-        <br>
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <label class="form-label small text-secondary">Contraseña:</label>
+                            <input type="password" class="form-control bg-secondary bg-opacity-25 text-white border-0"
+                                id="password" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small text-secondary">Repetir contraseña:</label>
+                            <input type="password" class="form-control bg-secondary bg-opacity-25 text-white border-0"
+                                id="password2" required>
+                        </div>
+                    </div>
 
-        <label>Contraseña:</label>
-        <input type="password" id="password">
+                    <button type="button" class="btn btn-primary w-100 fw-bold py-2 mb-3" onclick="registrar()">
+                        Registrarse
+                    </button>
+                </form>
 
-        <label>Repetir contraseña:</label>
-        <input type="password" id="password2">
-
-        <button class="btn-ingresar" onclick="registrar()">Registrarse</button>
-
-        <a href="login.html" class="links">¿Ya tienes una cuenta? Ingresa acá</a>
+                <!-- Fíjate cómo uso la ruta de Django para volver al login -->
+                <a href="{% url 'login' %}" class="text-decoration-none small text-info">¿Ya tienes una cuenta? Ingresa
+                    acá</a>
+            </div>
+        </div>
     </div>
 
-    class="nav-item"><a class="nav-link" href="{% url 'registro' %}">login</a>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Lógica de registro corregida -->
     <script>
         function registrar() {
+            // Validar que las contraseñas coincidan antes de enviar
+            const pass1 = document.getElementById("password").value;
+            const pass2 = document.getElementById("password2").value;
+
+            if (pass1 !== pass2) {
+                alert("Las contraseñas no coinciden.");
+                return;
+            }
+
             fetch("http://localhost:3000/cliente", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    cliente_id: id.value,
-                    nombre: nombre.value,
-                    correo_electronico: correo.value,
-                    telefono: telefono.value,
-                    genero: genero.value,
-                    contraseña: contraseña.value
+                    // Eliminé cliente_id porque la base de datos debería autogenerarlo
+                    nombre: document.getElementById("nombre").value,
+                    correo_electronico: document.getElementById("correo").value,
+                    telefono: document.getElementById("telefono").value,
+                    genero: document.getElementById("genero").value,
+                    contraseña: pass1 // Mapeado correctamente al valor del input
                 })
             })
                 .then(res => res.text())
-                .then(data => alert(data));
+                .then(data => alert(data))
+                .catch(err => alert("Error de conexión con el servidor"));
         }
     </script>
 <!-- FOOTER -->
-<footer class="mt-5">
-    <p>© 2023 Hotel Pacific Reef. Todos los derechos reservados.</p>
-    <p><a href="mailto:accesorios@tienda.com" style="color: #ddd">¡Contáctanos a través de nuestro email!</a>
-    </p>
-    <p><a href="tel:+56912345678" style="color: #ddd">¡Y si prefieres una llamada!: +56912345678</a></p>
+<footer class="mt-auto py-3 bg-black text-center border-top border-secondary text-secondary">
+    <p class="mb-1 small">© 2023 Hotel Pacific Reef. Todos los derechos reservados.</p>
+    <p class="mb-1 small"><a href="mailto:accesorios@tienda.com"
+            class="text-decoration-none text-secondary">¡Contáctanos a través de nuestro email!</a></p>
+    <p class="mb-0 small"><a href="tel:+56912345678" class="text-decoration-none text-secondary">Llámanos al:
+            +56912345678</a></p>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
 </body>
+
+</html>
