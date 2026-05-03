@@ -19,3 +19,7 @@ def home_cliente(request):
 #vista home-cliente
 def metodo_pago(request):
     return render(request, 'metodo_pago.html') 
+
+#vista detalle habitacion
+def detalle_habitacion(request):
+    return render(request, 'detalle_habitacion.html') 
