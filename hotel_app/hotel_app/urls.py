@@ -17,14 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from core.views import login_estatico, registro, reserva, metodo_pago, detalle_habitacion, iniciar_sesion
+from core.views import login_estatico, registro, reserva, reserva_lista, metodo_pago, detalle_habitacion, iniciar_sesion
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", login_estatico, name="login"),
     path("registro/", registro, name="registro"),
     path("reserva/", reserva, name="reserva"),
+    path("reserva_lista/", reserva_lista, name="reserva_lista"),
+    path("home_cliente/", iniciar_sesion, name="home_cliente"),
     path("metodo_pago/", metodo_pago, name="metodo_pago"),
     path("detalle_habitacion/", detalle_habitacion, name="detalle_habitacion"),
-    path('home_cliente/', iniciar_sesion, name="home_cliente"),
 ]
