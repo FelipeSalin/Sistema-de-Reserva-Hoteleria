@@ -13,8 +13,8 @@ def reserva(request):
     return render(request, 'reserva.html') 
 
 #vista home-cliente
-def home_cliente(request):
-    return render(request, 'home_cliente.html') 
+#def home_cliente(request):
+    #return render(request, 'home_cliente.html') 
 
 #vista home-cliente
 def metodo_pago(request):
