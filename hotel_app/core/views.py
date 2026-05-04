@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.contrib.auth.forms import AuthenticationForm
+
 
 # Create your views here.
 def login_estatico(request):
@@ -26,4 +28,8 @@ def detalle_habitacion(request):
 
 # creamos autenticación para home_cliente 
 def iniciar_sesion(request):
-    return render(request, 'autenticacion/home_cliente.html')
+    formulario = AuthenticationForm()
+    contex ={
+        "formulario": formulario
+    }
+    return render(request, 'autenticacion/home_cliente.html, context')
