@@ -23,3 +23,7 @@ def metodo_pago(request):
 #vista detalle habitacion
 def detalle_habitacion(request):
     return render(request, 'detalle_habitacion.html') 
+
+# creamos autenticación para home_cliente 
+def iniciar_sesion(request):
+    return render(request, 'autenticacion/home_cliente.html')
