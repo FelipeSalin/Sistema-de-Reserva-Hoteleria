@@ -24,7 +24,7 @@ urlpatterns = [
     path("", login_estatico, name="login"),
     path("registro/", registro, name="registro"),
     path("reserva/", reserva, name="reserva"),
-    path("home_cliente/", iniciar_sesion, name="home_cliente"),
     path("metodo_pago/", metodo_pago, name="metodo_pago"),
     path("detalle_habitacion/", detalle_habitacion, name="detalle_habitacion"),
+    path('home_cliente/', iniciar_sesion, name="home_cliente"),
 ]
