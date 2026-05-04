@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def index_estatico(request):
-    return render(request, 'login.html') 
+    return render(request, 'index.html') 
 
 #vista de registro
 def registro(request):
@@ -44,4 +44,4 @@ def home_admin(request):
 
 # creamos autenticación para login
 def iniciar_sesion(request):
-    return render(request, "auteticacion/login.html")
+    return render(request, "autenticacion/login.html")
