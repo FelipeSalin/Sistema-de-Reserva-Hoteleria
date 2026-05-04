@@ -1,6 +1,5 @@
 {% load static %}
 
-{% csrf_token %}
 
 <!DOCTYPE html>
 <html lang="es">
@@ -36,27 +35,28 @@
                 <h2 class="card-title h4 mb-4">Ingresa a tu cuenta</h2>
     
             <form method="post">
+                {% csrf_token %}
                 
-
                 <div class="avatar mx-auto mb-4 d-flex align-items-center justify-content-center"
                     style="width: 100px; height: 100px; background-color: #faf8f8; border-radius: 50%; font-size: 50px;">
                     👤
                 </div>
     
-                <form id="loginForm">
                     <!-- Campo Email -->
                     <div class="mb-3 text-start">
-                        <label for="correo" class="form-label small text-secondary">Email de usuario:</label>
-                        <input type="email" class="form-control bg-secondary bg-opacity-25 text-white border-0 py-2"
-                            id="correo" placeholder="nombre@ejemplo.com" required>
+                        <label>Email:</label>
+                        <input type="text" name="username" class="form-control" required>
                     </div>
-    
-                    <!-- Campo Password -->
-                    <div class="mb-2 text-start">
-                        <label for="password" class="form-label small text-secondary">Contraseña:</label>
-                        <input type="password" class="form-control bg-secondary bg-opacity-25 text-white border-0 py-2"
-                            id="password" required>
+                    
+                    <div class="mb-3 text-start">
+                        <label>Contraseña:</label>
+                        <input type="password" name="password" class="form-control" required>
                     </div>
+                    
+                    <button type="submit" class="btn btn-primary w-100">
+                        Ingresar
+                    </button>
+            </form>
     
                     <!-- Link Olvidé -->
                     <div class="text-end mb-4">
@@ -94,7 +94,7 @@
         </div>
     </div>
 
-    <script>
+    <!--script>
         async function login() {
             const correo = document.getElementById("correo").value;
             const password = document.getElementById("password").value;

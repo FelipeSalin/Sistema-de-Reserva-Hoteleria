@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.contrib.auth.forms import AuthenticationForm
+#from django.contrib.auth.forms import AuthenticationForm
 
 # Create your views here.
 def index_estatico(request):
@@ -13,7 +13,7 @@ def registro(request):
 def reserva(request):
     return render(request, 'reserva.html')
 
-#vista de registro
+#vista de reserva lista
 def reserva_lista(request):
     return render(request, 'reserva_lista.html')  
 
@@ -21,19 +21,27 @@ def reserva_lista(request):
 def home_cliente(request):
     return render(request, 'home_cliente.html') 
 
-#vista home-cliente
+#vista metodo pago
 def metodo_pago(request):
     return render(request, 'metodo_pago.html') 
 
 #vista detalle habitacion
 def detalle_habitacion(request):
-    return render(request, 'detalle_habitacion.html') 
+    return render(request, 'detalle_habitacion.html')
 
-# creamos autenticación para home_cliente 
+#vista de reserva retroalimentación cliente
+def retroalimentacion_cliente(request):
+    return render(request, 'retroalimentacion_cliente.html')  
+
+#vista de perfil cliente
+def perfil_cliente(request):
+    return render(request, 'perfil_cliente.html')
+
+#vista de inicio admin
+def home_admin(request):
+    return render(request, 'home_admin.html')
+   
+
+# creamos autenticación para login
 def iniciar_sesion(request):
-    formulario = AuthenticationForm()
-    context = {
-        "formulario": formulario
-    }
-
-    return render(request, 'autenticacion/login.html', context)
+    return render(request, "auteticacion/login.html")

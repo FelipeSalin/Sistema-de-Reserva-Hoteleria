@@ -1,136 +1,92 @@
-<!DOCTYPE html>
-<html lang="es">
+{% load static %}
 
 <head>
     <meta charset="UTF-8">
-    <title>Hotel</title>
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-
-        .hero {
-            background: url('https://images.unsplash.com/photo-1566073771259-6a8506099945') center/cover;
-            height: 60vh;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-shadow: 2px 2px 5px black;
-        }
-
-        .card img {
-            height: 200px;
-            object-fit: cover;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistema Hotelero</title>
+    <!-- Conectamos el archivo CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 </head>
 
-<body>
-
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!--<body>
+    <!-- Barra de navegación -->
+    <!--<nav class="navbar navbar-expand-lg navbar-light fixed-top shadow">
         <div class="container">
-            <a class="navbar-brand" href="#">Hotel</a>
+            <a class="navbar-brand" href="{% url 'index' %}">
+                Pacific Reef
+            </a>
+            <img src="{% static 'assets/iconos/icono1.png' %}" alt="Logo" width="80" class="me-2 rounded">
+        </div>
+    </nav>-->
 
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<body class="bg-dark text-white">
 
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto">
-
-                    <!-- Idioma -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            Idioma
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Español</a></li>
-                            <li><a class="dropdown-item" href="#">English</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Login -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login/">Ingresar</a>
-                    </li>
-
-                    <!-- Registro -->
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-primary text-white ms-2 px-3" href="/registro/">
-                            Registrarse
-                        </a>
-                    </li>
-
-                </ul>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light fixed-top shadow" style="background-color: #000;">
+        <div class="container d-flex justify-content-between align-items-center">
+    
+            <!-- Botón menú -->
+            <button class="btn btn-light rounded-circle">☰</button>
+    
+            <!-- Acciones -->
+            <div class="d-flex align-items-center gap-2">
+    
+                <!-- Idioma -->
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle btn-sm" data-bs-toggle="dropdown">
+                        Español
+                    </button>
+                </div>
+    
+                <!-- Ingreso -->
+                <a href="{% url 'login' %}" class="btn btn-outline-light btn-sm">
+                    Ingreso
+                </a>
+    
+                <!-- Registro -->
+                <a href="{% url 'registro' %}" class="btn btn-light btn-sm">
+                    Registro
+                </a>
+    
             </div>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero">
-        <h1 class="display-4 fw-bold">Bienvenido a tu Hotel</h1>
-    </section>
+    <!-- Contenido principal -->
+    <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
 
-    <!-- HABITACIONES -->
-    <div class="container my-5">
+        <!-- Título -->
+        <h2 class="mb-3">Bienvenidos</h2>
 
-        <h2 class="text-center mb-4">Nuestras Habitaciones</h2>
+        <!-- Logo -->
+        <img src="{% static 'assets/iconos/icono1.png' %}" width="120" class="mb-3">
 
-        <div class="row g-4">
+        <!-- Frase -->
+        <div class="bg-light text-dark px-3 py-2 mb-4 rounded">
+            Mas que un hotel una experiencia
+        </div>
 
-            <!-- Habitación 1 -->
-            <div class="col-md-4">
-                <div class="card shadow">
-                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Habitación Turista</h5>
-                        <p class="card-text">Ideal para viajes económicos.</p>
-                        <a href="#" class="btn btn-primary w-100">Ver detalle</a>
-                    </div>
-                </div>
-            </div>
+        <!-- Card con imagen -->
+        <div class="card border-0 shadow-lg" style="width: 320px; border-radius: 25px; overflow: hidden;">
+            <img src="{% static 'assets/imgen/suit1.png' %}" class="card-img-top"
+                style="height: 200px; object-fit: cover;">
+        </div>
 
-            <!-- Habitación 2 -->
-            <div class="col-md-4">
-                <div class="card shadow">
-                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Habitación Premium</h5>
-                        <p class="card-text">Mayor comodidad y lujo.</p>
-                        <a href="#" class="btn btn-primary w-100">Ver detalle</a>
-                    </div>
-                </div>
-            </div>
+        <!-- Botones -->
+        <div class="mt-4 w-100 d-flex flex-column align-items-center">
 
-            <!-- Habitación 3 -->
-            <div class="col-md-4">
-                <div class="card shadow">
-                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Suite Familiar</h5>
-                        <p class="card-text">Perfecta para familias.</p>
-                        <a href="#" class="btn btn-primary w-100">Ver detalle</a>
-                    </div>
-                </div>
-            </div>
+            <a href="#" class="btn btn-primary mb-3 w-75 rounded-pill">
+                Ingresa con Facebook
+            </a>
+
+            <a href="#" class="btn btn-light w-75 rounded-pill">
+                Ingresa con Google
+            </a>
 
         </div>
 
     </div>
 
-    <!-- FOOTER -->
-    <footer class="bg-dark text-white text-center p-3">
-        © 2026 Hotel - Todos los derechos reservados
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
-
-</html>

@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Cliente</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tu CSS Personalizado -->
+    <link rel="stylesheet" href="{% static 'CSS/styles.css' %}">
+</head>
+
+
+<body class="bg-dark text-white d-flex flex-column min-vh-100">
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home_cliente' %}">
+                Pacific Reef
+            </a>
+            <img src="{% static 'assets/iconos/icono1.png' %}" alt="Logo" width="80" class="me-2 rounded">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navBarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse bg-white" id="navBarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home_cliente' %}">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'perfil_cliente' %}">Mi Perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenedor Principal Centrado -->
+    <div class="container d-flex flex-grow-1 justify-content-center align-items-center mt-5">
+
+        <div class="card bg-dark text-white p-4 shadow-lg border border-secondary mt-5 mb-5"
+            style="width: 100%; max-width: 500px; border-radius: 20px;">
+            <div class="card-body text-center">
+                <h2 class="card-title h4">Mi Perfil</h2>
+
+                <div class="avatar mx-auto mb-4 d-flex align-items-center justify-content-center"
+                    style="width: 100px; height: 100px; background-color: #faf8f8; border-radius: 50%; font-size: 50px;">
+                    👤
+                </div>
+
+                <form id="registroForm" class="text-start">
+                    <div class="mb-3 text-center">
+                        <p class="small text-primary mb-1">Nombre completo:</p>
+                        <p class="small text-secondary mb-0">📝 (Nombre del usuario)</p>
+                    </div>
+
+                    <div class="mb-3 text-center">
+                        <p class="small text-primary mb-1">Correo electrónico:</p>
+                        <p class="small text-secondary mb-0">📝 (mail del usuario)</p>
+                    </div>
+
+                    <div class="mb-3 text-center">
+                        <p class="small text-primary mb-1">Número de teléfono:</p>
+                        <p class="small text-secondary mb-0">📝 +56912345678</p>
+                    </div>
+
+                    <!-- html para editar
+                    <div class="mb-3 text-center">
+    <p class="small text-primary mb-1">Nombre completo:</p>
+    <p class="small text-secondary mb-0">
+        <span id="nombre-texto">Juan Pérez</span>
+        <span style="cursor:pointer;" onclick="editarCampo('nombre')">📝</span>
+    </p>
+    <input type="text" id="nombre-input" class="form-control mt-2 d-none" value="Juan Pérez"
+           onblur="guardarCampo('nombre')">
+</div> -->
+
+                    <!-- JS para editar
+                    <script>
+function editarCampo(campo) {
+    document.getElementById(campo + "-texto").classList.add("d-none");
+    document.getElementById(campo + "-input").classList.remove("d-none");
+    document.getElementById(campo + "-input").focus();
+}
+
+function guardarCampo(campo) {
+    let input = document.getElementById(campo + "-input");
+    let texto = document.getElementById(campo + "-texto");
+
+    texto.innerText = input.value;
+
+    input.classList.add("d-none");
+    texto.classList.remove("d-none");
+}
+</script> -->
+
+                    <div class="mb-3 text-center">
+                        <p class="small text-primary mb-1 fst-italic">Aún no has reservado en nuestras sucursales de
+                            hospedaje.</p>
+                    </div>
+            </div>
+
+            <a href="{% url 'home_cliente' %}" class="btn btn-success w-100">Guardar cambios</a>
+            </form>
+
+        </div>
+    </div>
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="row text-start align-items-center">
+            <div class="col-md-4 text-center">
+                <img src="{% static 'assets/iconos/icono1.png' %}" alt="Logo" width="200" class="me-2 rounded">
+            </div>
+            <div class="col-md-4">
+                <h6 class="fw-bold">Quick links</h6>
+                <ul class="list-unstyled small">
+                    <li>Home</li>
+                    <li>View hotels</li>
+                    <li>Room Reservation</li>
+                    <li>About us</li>
+                    <li>Contact us</li>
+                </ul>
+            </div>
+            <div class="col-md-4 text-center">
+                <h6 class="fw-bold">Download the app</h6>
+                <p class="small text-secondary">Find, book and explore our upgraded rooms in moments.</p>
+                <div class="bg-light text-dark p-2 rounded d-inline-block">
+                    <small>Get the App</small>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 pb-4">
+            <p class="small text-secondary">© 2024 Hotel Pacific Reef. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
