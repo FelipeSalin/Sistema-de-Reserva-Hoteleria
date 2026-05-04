@@ -59,12 +59,12 @@
                     </div>
                     
                     <!-- Botón Ingresar -->
-                    <button type="button" class="btn btn-primary w-100 fw-bold py-2 mb-3"
-                        onclick="window.location.href='home_cliente'">
-                    
-                        Ingresar
-                    
+                    <button type="button" class="btn btn-primary w-100 fw-bold py-2 mb-3">
+                        <a href="{% url 'home_cliente' %}" class="btn btn-primary w-100 fw-bold">
+                            Ingresar
+                        </a>
                     </button>
+                    
                 </form>
     
                 <a href="{% url 'registro' %}" class="text-decoration-none small text-info d-block mb-3">¿No tienes una cuenta?
