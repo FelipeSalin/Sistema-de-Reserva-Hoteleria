@@ -34,7 +34,7 @@
             <div class="card-body text-center">
                 <h2 class="card-title h4 mb-4">Ingresa a tu cuenta</h2>
     
-            <form method="post">
+            <form method="post" action="">
                 {% csrf_token %}
                 
                 <div class="avatar mx-auto mb-4 d-flex align-items-center justify-content-center"
@@ -48,39 +48,30 @@
                         <input type="text" name="username" class="form-control" required>
                     </div>
                     
+                    <!-- Contraseña -->
                     <div class="mb-3 text-start">
                         <label>Contraseña:</label>
-                        <input type="password" name="password" class="form-control" required>
+                        <input type="password" name="password" class="form-control" required minlength="8">
                     </div>
                     
-                    <button type="submit" class="btn btn-primary w-100">
+                    <!-- Error de login -->
+                    {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                    {% endif %}
+                    
+                    <!-- Botón correcto -->
+                    <button type="submit" class="btn btn-primary w-100 fw-bold py-2 mb-3">
                         Ingresar
                     </button>
             </form>
-    
+
                     <!-- Link Olvidé -->
                     <div class="text-end mb-4">
                         <a href="#" class="text-decoration-none small text-secondary">Olvidé usuario/contraseña</a>
                     </div>
                     
-                    <!-- Botón Ingresar -->
-                    <button type="button" class="btn btn-primary w-100 fw-bold py-2 mb-3">
-                        <a href="{% url 'home_cliente' %}" class="btn btn-primary w-100 fw-bold">
-                            Ingresar
-                        </a>
-                    </button>
-                    
-                </form>
-    
-                <a href="{% url 'registro' %}" class="text-decoration-none small text-info d-block mb-3">¿No tienes una cuenta?
-                    Regístrate</a>
-    
-                <div class="d-flex align-items-center my-3">
-                    <hr class="flex-grow-1 text-secondary">
-                    <span class="mx-2 small text-secondary">o</span>
-                    <hr class="flex-grow-1 text-secondary">
-                </div>
-    
                 <!-- Botones Sociales -->
                 <button class="btn btn-outline-light w-100 mb-2 d-flex align-items-center justify-content-center py-2"
                     style="background-color: #1877F2; border: none;">
@@ -93,32 +84,6 @@
             </div>
         </div>
     </div>
-
-    <!--script>
-        async function login() {
-            const correo = document.getElementById("correo").value;
-            const password = document.getElementById("password").value;
-
-            try {
-                const res = await fetch("http://localhost:3000/login", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ correo, password })
-                });
-
-                const data = await res.text();
-
-                if (data === "Login correcto") {
-                    window.location.href = "reserva.html";
-                } else {
-                    alert("Credenciales no válidas");
-                }
-            } catch (error) {
-                console.error("Error de conexión:", error);
-                alert("No se pudo conectar con el servidor.");
-            }
-        }
-    </script>
 
 <!-- FOOTER -->
 <footer class="mt-5">

@@ -1,5 +1,9 @@
 from django.shortcuts import render
-#from django.contrib.auth.forms import AuthenticationForm
+from django.shortcuts import redirect
+from django.contrib.auth.forms import AuthenticationForm
+
+from django.contrib.auth import authenticate,login
+
 
 # Create your views here.
 def index_estatico(request):
@@ -44,4 +48,32 @@ def home_admin(request):
 
 # creamos autenticación para login
 def iniciar_sesion(request):
-    return render(request, "autenticacion/login.html")
+    
+    if request.method == "POST":
+        formulario = AuthenticationForm()
+        if formulario.is_valid():
+            nombre_usuario = formulario.cleaned_data.get("username")
+            contrasena = formulario.cleaned_data.get("password")
+            usuario = authenticate(username=nombre_usuario,password=contrasena) 
+            if usuario is None:
+                context = {
+                    "formulario": formulario,
+                    "error": "Usuario o contraseña incorrectas"    
+                }
+                return render(request, "autenticacion/login.html", context)
+            else:
+                login(request, usuario)
+                return redirect("index")
+        else:
+            context = {
+                "formulario": formulario    
+        }
+        return render(request, "autenticacion/login.html", context)
+            
+    else:    
+        formulario = AuthenticationForm()
+        context = {
+            "formulario": formulario    
+    }
+    return render(request, "autenticacion/login.html", context)
+
