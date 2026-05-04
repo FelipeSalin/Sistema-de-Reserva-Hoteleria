@@ -20,7 +20,7 @@ from django.urls import path
 from core.views import login_estatico, registro, reserva, home_cliente, metodo_pago, detalle_habitacion
 
 urlpatterns = [
-    #path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path("", login_estatico, name="login"),
     path("registro/", registro, name="registro"),
     path("reserva/", reserva, name="reserva"),
