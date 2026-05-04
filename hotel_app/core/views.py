@@ -12,7 +12,11 @@ def registro(request):
 
 #vista de reserva
 def reserva(request):
-    return render(request, 'reserva.html') 
+    return render(request, 'reserva.html')
+
+#vista de registro
+def reserva_lista(request):
+    return render(request, 'reserva_lista.html')  
 
 #vista home-cliente
 #def home_cliente(request):
