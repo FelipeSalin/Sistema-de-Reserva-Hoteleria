@@ -16,17 +16,18 @@
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow">
         <div class="container">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="{% url 'home_cliente' %}">
                 Pacific Reef
             </a>
+            <img src="{% static 'assets/iconos/icono1.png' %}" alt="Logo" width="80" class="me-2 rounded">
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navBarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse bg-white" id="navBarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home_cliente' %}">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Mi Perfil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/">Cerrar Sesión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Cerrar Sesión</a></li>
                 </ul>
             </div>
         </div>
@@ -39,56 +40,56 @@
             <div class="row row-cols-1 g-4">
                 <div class="col">
                     <div class="card">
-                        <img src="/hotel-app/assets/suite1.png" class="card-img-top" alt="...">
+                        <img src="{% static 'assets/suite1.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Habitación Turista 013</h5>
                             <p class="card-text">3 noches, 2 adultos</p>
                             <p class="card-text fw-bold">Precio original $250.000. Precio actual $225.000. Incluye impuestos y cargo de servicio</p>
-                            <button class="btn btn-primary w-100">Disponibilidad</button>
+                            <a href="{% url 'detalle_habitacion' %}" class="btn btn-primary w-100">Disponibilidad</a>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card">
-                        <img src="/hotel-app/assets/suite1.png" class="card-img-top" alt="...">
+                        <img src="{% static 'assets/suite1.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Habitación Turista 015</h5>
                             <p class="card-text">3 noches, 2 adultos</p>
                             <p class="card-text fw-bold">Precio original $250.000. Precio actual $225.000. Incluye impuestos y cargo de servicio</p>
-                            <button class="btn btn-primary w-100">Disponibilidad</button>
+                            <a href="{% url 'detalle_habitacion' %}" class="btn btn-primary w-100">Disponibilidad</a>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card">
-                        <img src="/hotel-app/assets/suite1.png" class="card-img-top" alt="...">
+                        <img src="{% static 'assets/suite1.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Habitación Turista 018</h5>
                             <p class="card-text">3 noches, 2 adultos</p>
                             <p class="card-text fw-bold">Precio original $250.000. Precio actual $225.000. Incluye impuestos y cargo de servicio</p>
-                            <button class="btn btn-primary w-100">Disponibilidad</button>
+                            <a href="{% url 'detalle_habitacion' %}" class="btn btn-primary w-100">Disponibilidad</a>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card">
-                        <img src="/hotel-app/assets/suite1.png" class="card-img-top" alt="...">
+                        <img src="{% static 'assets/suite3.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Habitación Premium 030</h5>
                             <p class="card-text">3 noches, 2 adultos</p>
                             <p class="card-text fw-bold">Precio original $300.000. Precio actual $275.000. Incluye impuestos y cargo de servicio</p>
-                            <button class="btn btn-primary w-100">Disponibilidad</button>
+                            <a href="{% url 'detalle_habitacion' %}" class="btn btn-primary w-100">Disponibilidad</a>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card">
-                        <img src="/hotel-app/assets/suite1.png" class="card-img-top" alt="...">
+                        <img src="{% static 'assets/suite3.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Habitación Premium 032</h5>
                             <p class="card-text">3 noches, 2 adultos</p>
                             <p class="card-text fw-bold">Precio original $300.000. Precio actual $275.000. Incluye impuestos y cargo de servicio</p>
-                            <button class="btn btn-primary w-100">Disponibilidad</button>
+                            <a href="{% url 'detalle_habitacion' %}" class="btn btn-primary w-100">Disponibilidad</a>
                         </div>
                     </div>
                 </div>
