@@ -77,3 +77,10 @@ def iniciar_sesion(request):
     }
     return render(request, "autenticacion/login.html", context)
 
+#vista de métricas
+def metricas(request):
+    return render(request, 'metricas.html')
+
+#vista de comentarios
+def comentarios(request):
+    return render(request, 'comentarios.html')

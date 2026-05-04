@@ -26,6 +26,9 @@
         </div>
     </nav>
 
+    <br>
+    <br>
+    <br>
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <!-- Tarjeta Principal -->
         <div class="card bg-dark text-white p-4 shadow-lg"
@@ -72,6 +75,17 @@
                         <a href="#" class="text-decoration-none small text-secondary">Olvidé usuario/contraseña</a>
                     </div>
                     
+                </form>
+    
+                <a href="{% url 'registro' %}" class="text-decoration-none small text-info d-block mb-3">¿No tienes una cuenta?
+                    Regístrate</a>
+    
+                <div class="d-flex align-items-center my-3">
+                    <hr class="flex-grow-1 text-secondary">
+                    <span class="mx-2 small text-secondary">o</span>
+                    <hr class="flex-grow-1 text-secondary">
+                </div>
+    
                 <!-- Botones Sociales -->
                 <button class="btn btn-outline-light w-100 mb-2 d-flex align-items-center justify-content-center py-2"
                     style="background-color: #1877F2; border: none;">

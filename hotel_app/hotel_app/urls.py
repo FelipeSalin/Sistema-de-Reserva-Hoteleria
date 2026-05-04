@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from core.views import index_estatico, registro, reserva, reserva_lista, home_cliente, metodo_pago, detalle_habitacion, retroalimentacion_cliente, perfil_cliente, home_admin, iniciar_sesion
+from core.views import index_estatico, registro, reserva, reserva_lista, home_cliente, metodo_pago, detalle_habitacion, retroalimentacion_cliente, perfil_cliente, home_admin, iniciar_sesion, metricas, comentarios
 
 
 urlpatterns = [
@@ -33,4 +33,6 @@ urlpatterns = [
     path("perfil_cliente/", perfil_cliente, name="perfil_cliente"),
     path("home_admin/", home_admin, name="home_admin"),
     path("login/", iniciar_sesion, name="login"),
+    path("metricas/", metricas, name="metricas"),
+    path("comentarios/", comentarios, name="comentarios"),
 ]
