@@ -89,7 +89,8 @@ DATABASES = {
         "PASSWORD": "duoc",
         "TEST": {
             "USER": "default_test",
-            "TBLSPACE": "default_test_tbl_tmp"
+            "TBLSPACE": "default_test_tbls",
+            "TBLSPACE_TMP": "default_test_tbls_tmp",
         }
     }
 }
