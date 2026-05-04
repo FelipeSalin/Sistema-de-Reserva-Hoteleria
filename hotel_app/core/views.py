@@ -13,7 +13,7 @@ def registro(request):
 def reserva(request):
     return render(request, 'reserva.html')
 
-#vista de registro
+#vista de reserva lista
 def reserva_lista(request):
     return render(request, 'reserva_lista.html')  
 
@@ -27,7 +27,19 @@ def metodo_pago(request):
 
 #vista detalle habitacion
 def detalle_habitacion(request):
-    return render(request, 'detalle_habitacion.html') 
+    return render(request, 'detalle_habitacion.html')
+
+#vista de reserva retroalimentación cliente
+def retroalimentacion_cliente(request):
+    return render(request, 'retroalimentacion_cliente.html')  
+
+#vista de perfil cliente
+def perfil_cliente(request):
+    return render(request, 'perfil_cliente.html')
+
+#vista de inicio admin
+def home_admin(request):
+    return render(request, 'home_admin.html')    
 
 # creamos autenticación para home_cliente 
 def iniciar_sesion(request):

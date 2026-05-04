@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from core.views import login_estatico, registro, reserva, reserva_lista, metodo_pago, detalle_habitacion, iniciar_sesion
+from core.views import login_estatico, registro, reserva, reserva_lista, metodo_pago, detalle_habitacion, retroalimentacion_cliente, iniciar_sesion, perfil_cliente, home_admin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +28,7 @@ urlpatterns = [
     path("home_cliente/", iniciar_sesion, name="home_cliente"),
     path("metodo_pago/", metodo_pago, name="metodo_pago"),
     path("detalle_habitacion/", detalle_habitacion, name="detalle_habitacion"),
+    path("retroalimentacion_cliente/", retroalimentacion_cliente, name="retroalimentacion_cliente"),
+    path("perfil_cliente/", perfil_cliente, name="perfil_cliente"),
+    path("home_admin/", home_admin, name="home_admin"),
 ]
