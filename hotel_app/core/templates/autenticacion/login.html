@@ -37,7 +37,7 @@
             <div class="card-body text-center">
                 <h2 class="card-title h4 mb-4">Ingresa a tu cuenta</h2>
     
-            <form method="post" action="">
+            <form id="loginform" method="post" action="">
                 {% csrf_token %}
                 
                 <div class="avatar mx-auto mb-4 d-flex align-items-center justify-content-center"
@@ -48,7 +48,7 @@
                     <!-- Campo Email -->
                     <div class="mb-3 text-start">
                         <label>Email:</label>
-                        <input type="text" name="username" class="form-control" required>
+                        <input type="text" name="username" class="form-control" required minlength="8">
                     </div>
                     
                     <!-- Contraseña -->

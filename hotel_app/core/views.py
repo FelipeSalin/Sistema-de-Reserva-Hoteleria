@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib.auth.forms import AuthenticationForm
 
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate, login
 
 
 # Create your views here.
@@ -50,7 +50,7 @@ def home_admin(request):
 def iniciar_sesion(request):
     
     if request.method == "POST":
-        formulario = AuthenticationForm()
+        formulario = AuthenticationForm(request, data=request.POST)
         if formulario.is_valid():
             nombre_usuario = formulario.cleaned_data.get("username")
             contrasena = formulario.cleaned_data.get("password")
@@ -63,7 +63,7 @@ def iniciar_sesion(request):
                 return render(request, "autenticacion/login.html", context)
             else:
                 login(request, usuario)
-                return redirect("index")
+                return redirect("home_cliente")
         else:
             context = {
                 "formulario": formulario    
