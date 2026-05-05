@@ -38,9 +38,21 @@
     
                 <!-- Idioma -->
                 <div class="dropdown">
-                    <button class="btn btn-outline-light dropdown-toggle btn-sm" data-bs-toggle="dropdown">
+                    <button id="idiomaBtn" class="btn btn-outline-light dropdown-toggle btn-sm" data-bs-toggle="dropdown">
                         Español
                     </button>
+
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" onclick="cambiarIdioma('Español')">Español</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="cambiarIdioma('English')">English</a></li>
+                </ul>
+
+                <script>
+                function cambiarIdioma(idioma) {
+                    document.getElementById("idiomaBtn").innerText = idioma;
+                }
+                </script>
+
                 </div>
     
                 <!-- Ingreso -->
@@ -91,5 +103,7 @@
         </div>
 
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
