@@ -4,6 +4,8 @@ from django.contrib.auth.forms import AuthenticationForm
 
 from django.contrib.auth import authenticate, login
 
+from core.forms import CustomUserCreationForm
+
 
 # Create your views here.
 def index_estatico(request):
@@ -11,7 +13,23 @@ def index_estatico(request):
 
 #vista de registro
 def registro(request):
-    return render(request, 'registro.html') 
+    if request.method == 'POST':
+        # formulario = UserCreationForm(request.POST)
+        formulario = CustomUserCreationForm(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('home_cliente')
+        else:
+            contexto = {
+                'formulario': formulario,
+            }
+            return render(request, 'autenticacion/registro.html', contexto)
+    else:
+        formulario = CustomUserCreationForm()
+        contexto = {
+            "formulario": formulario
+        }
+        return render(request, 'autenticacion/registro.html', contexto) 
 
 #vista de reserva
 def reserva(request):
