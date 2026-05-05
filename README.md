@@ -21,5 +21,5 @@ https://www.figma.com/design/dzAobutyNxOKzYDuTg2KZl/Hotel-Reservation-System--Co
 En el siguiente enlace se encuentra un archivo Excel con la Planilla de Testing:
 https://docs.google.com/spreadsheets/d/1SvoWMQutmfR5VdKDiNEYTsQY8oMZzgJF/edit?usp=sharing&ouid=101451696748147278398&rtpof=true&sd=true
 
-En el siguiente enlace se encuentra el archivo drive de la semana 8, siendo este un word:
-https://docs.google.com/document/d/1M3zbPGGq4b8hH1aECzH7ZLFFBki9BJe_/edit?usp=sharing&ouid=101451696748147278398&rtpof=true&sd=true
+En el siguiente enlace se encuentra el archivo drive de la semana 9, siendo este un word:
+https://docs.google.com/document/d/1b2mBtVSIUAfvGsxjEIFhOM4_lHMK9izV/edit?usp=sharing&ouid=101451696748147278398&rtpof=true&sd=true
