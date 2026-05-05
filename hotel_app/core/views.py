@@ -84,3 +84,7 @@ def metricas(request):
 #vista de comentarios
 def comentarios(request):
     return render(request, 'comentarios.html')
+
+#Logout
+def cerrar_sesion(request):
+    return redirect("index")
