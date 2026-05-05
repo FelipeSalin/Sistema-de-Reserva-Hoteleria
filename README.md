@@ -18,7 +18,8 @@ https://miro.com/welcomeonboard/TlRxNVUxWjRENzNLUlRyNVJYd2NJV01tTDh6T0U2Y3RpZTN6
 En el siguiente enlace se encuentra el archivo Figma en donde se encuentra el Prototipo de Diseño de Interfaz de la aplicación de reserva del Hotel:
 https://www.figma.com/design/dzAobutyNxOKzYDuTg2KZl/Hotel-Reservation-System--Community-?node-id=0-1&t=UmBUG2DvLHOVlHY5-1
 
-En el siguiente enlace se encuentra el drive de la semana 7, el cual contiene el archivo de respuesta Word, y los casos de prueba:
-https://drive.google.com/drive/folders/1pzFfF3koqvOIE3zygGGY2ktC4_tT4SH3?usp=sharing
+En el siguiente enlace se encuentra un archivo Excel con la Planilla de Testing:
+https://docs.google.com/spreadsheets/d/1SvoWMQutmfR5VdKDiNEYTsQY8oMZzgJF/edit?usp=sharing&ouid=101451696748147278398&rtpof=true&sd=true
 
-Prueba de Commit en GitHub desktop
+En el siguiente enlace se encuentra el archivo drive de la semana 8, siendo este un word:
+https://docs.google.com/document/d/1M3zbPGGq4b8hH1aECzH7ZLFFBki9BJe_/edit?usp=sharing&ouid=101451696748147278398&rtpof=true&sd=true
