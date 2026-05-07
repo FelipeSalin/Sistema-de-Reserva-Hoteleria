@@ -2,9 +2,10 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib.auth.forms import AuthenticationForm
 
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
-from core.forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm
 
 
 # Create your views here.
@@ -72,7 +73,7 @@ def iniciar_sesion(request):
         if formulario.is_valid():
             nombre_usuario = formulario.cleaned_data.get("username")
             contrasena = formulario.cleaned_data.get("password")
-            usuario = authenticate(username=nombre_usuario,password=contrasena) 
+            usuario = authenticate(username=nombre_usuario, password=contrasena) 
             if usuario is None:
                 context = {
                     "formulario": formulario,
@@ -84,7 +85,8 @@ def iniciar_sesion(request):
                 return redirect("home_cliente")
         else:
             context = {
-                "formulario": formulario    
+                "formulario": formulario,
+                "error": "Usuario o contraseña incorrectas"    
         }
         return render(request, "autenticacion/login.html", context)
             
@@ -104,5 +106,7 @@ def comentarios(request):
     return render(request, 'comentarios.html')
 
 #Logout
+@login_required
 def cerrar_sesion(request):
+    logout(request)
     return redirect("index")
