@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="es">
@@ -6,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Método de Pago - Hotel App</title>
+    <title>{% trans "Método de Pago - Hotel App" %}</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
@@ -80,9 +81,9 @@
             </button>
             <div class="collapse navbar-collapse bg-white" id="navBarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'home_cliente' %}">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'perfil_cliente' %}">Mi Perfil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home_cliente' %}">{% trans "Inicio" %}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'perfil_cliente' %}">{% trans "Mi Perfil" %}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">{% trans "Cerrar Sesión" %}</a></li>
                 </ul>
             </div>
         </div>
@@ -90,7 +91,7 @@
 
     <br>
         <hr class="mb-5">
-        <h2>Método disponible</h2>
+        <h2>{% trans "Método disponible" %}</h2>
         <hr class="mb-5">
 
         <!-- Opciones de Pago -->
@@ -106,8 +107,8 @@
                         </div>
                     </div>
                     <div class="col-5 text-center">
-                        <h6 class="mb-2">WebPay</h6>
-                        <button class="btn btn-siguiente btn-sm">Siguiente</button>
+                        <h6 class="mb-2">{% trans "WebPay" %}</h6>
+                        <button class="btn btn-siguiente btn-sm">{% trans "Siguiente" %}</button>
                     </div>
                 </div>
             </div>
@@ -121,8 +122,8 @@
                         </div>
                     </div>
                     <div class="col-5 text-center">
-                        <h6 class="mb-2">OnePay</h6>
-                        <button class="btn btn-siguiente btn-sm">Siguiente</button>
+                        <h6 class="mb-2">{% trans "OnePay" %}</h6>
+                        <button class="btn btn-siguiente btn-sm">{% trans "Siguiente" %}</button>
                     </div>
                 </div>
             </div>
@@ -137,8 +138,8 @@
                         </div>
                     </div>
                     <div class="col-5 text-center">
-                        <h6 class="mb-2">PayPal</h6>
-                        <button class="btn btn-siguiente btn-sm">Siguiente</button>
+                        <h6 class="mb-2">{% trans "PayPal" %}</h6>
+                        <button class="btn btn-siguiente btn-sm">{% trans "Siguiente" %}</button>
                     </div>
                 </div>
             </div>
@@ -153,8 +154,8 @@
                         </div>
                     </div>
                     <div class="col-5 text-center">
-                        <h6 class="mb-2">GooglePay</h6>
-                        <button class="btn btn-siguiente btn-sm">Siguiente</button>
+                        <h6 class="mb-2">{% trans "GooglePay" $}</h6>
+                        <button class="btn btn-siguiente btn-sm">{% trans "Siguiente" %}</button>
                     </div>
                 </div>
             </div>
@@ -169,8 +170,8 @@
                         </div>
                     </div>
                     <div class="col-5 text-center">
-                        <h6 class="mb-2">ApplePay</h6>
-                        <button class="btn btn-siguiente btn-sm">Siguiente</button>
+                        <h6 class="mb-2">{% trans "ApplePay" %}</h6>
+                        <button class="btn btn-siguiente btn-sm">{% trans "Siguiente" %}</button>
                     </div>
                 </div>
             </div>
@@ -181,16 +182,16 @@
         <footer>
             <div class="row text-start small">
                 <div class="col-6">
-                    <p class="text-white fw-bold mb-2">Quick links</p>
+                    <p class="text-white fw-bold mb-2">{% trans "Quick links" %}</p>
                     <ul class="list-unstyled">
-                        <li>Home</li>
-                        <li>View hotels</li>
-                        <li>Room Reservation</li>
+                        <li>{% trans "Home" %}</li>
+                        <li>{% trans "View hotels" %}</li>
+                        <li>{% trans "Room Reservation" %}</li>
                     </ul>
                 </div>
                 <div class="col-6">
-                    <p class="text-white fw-bold mb-2">Download the app</p>
-                    <p style="font-size: 0.75rem;">Find, book and explore our upgraded home in moments.</p>
+                    <p class="text-white fw-bold mb-2">{% trans "Download the app" %}</p>
+                    <p style="font-size: 0.75rem;">{% trans "Find, book and explore our upgraded home in moments." %}</p>
                 </div>
             </div>
             <div class="text-center mt-4">

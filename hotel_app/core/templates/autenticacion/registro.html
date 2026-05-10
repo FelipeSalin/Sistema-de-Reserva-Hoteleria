@@ -1,11 +1,13 @@
 {% load static %}
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro - Hotel App</title>
+    <title>{% trans "Registro - Hotel App" %}</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Tu CSS Personalizado -->
@@ -30,8 +32,8 @@
         <div class="card bg-dark text-white p-4 shadow-lg border border-secondary"
             style="width: 100%; max-width: 500px; border-radius: 20px;">
             <div class="card-body text-center">
-                <h2 class="card-title h4">¿Nuevo usuario?</h2>
-                <h3 class="h6 text-secondary mb-4">Rellena el formulario para crear tu cuenta</h3>
+                <h2 class="card-title h4">{% trans "¿Nuevo usuario?" %}</h2>
+                <h3 class="h6 text-secondary mb-4">{% trans "Rellena el formulario para crear tu cuenta" %}</h3>
 
                 <div class="avatar mx-auto mb-4 d-flex align-items-center justify-content-center"
                     style="width: 100px; height: 100px; background-color: #faf8f8; border-radius: 50%; font-size: 50px;">
@@ -53,7 +55,7 @@
                     -->
                     {% csrf_token %}
                     <div class="form-group">
-                        <label for="username">Nombre de usuario:</label>
+                        <label for="username">{% trans "Nombre de usuario:" %}</label>
                         <input
                           type="text"
                           class="form-control"
@@ -64,7 +66,7 @@
                         />
                     </div>
                     <div class="form-group">
-                        <label for="first_name">Nombre:</label>
+                        <label for="first_name">{% trans "Nombre:" %}</label>
                         <input
                           type="text"
                           class="form-control"
@@ -74,7 +76,7 @@
                         />
                     </div>
                     <div class="form-group">
-                        <label for="last_name">Apellido:</label>
+                        <label for="last_name">{% trans "Apellido:" %}</label>
                         <input
                           type="text"
                           class="form-control"
@@ -84,7 +86,7 @@
                         />
                     </div>
                     <div class="form-group">
-                        <label for="email">Correo electrónico:</label>
+                        <label for="email">{% trans "Correo electrónico:" %}</label>
                         <input
                           type="email"
                           class="form-control"
@@ -95,7 +97,7 @@
                         />
                     </div>
                     <div class="form-group">
-                        <label for="password">Contraseña:</label>
+                        <label for="password">{% trans "Contraseña:" %}</label>
                         <input
                           type="password"
                           class="form-control"
@@ -105,7 +107,7 @@
                         />
                     </div>
                     <div class="form-group">
-                        <label for="password2">Confirmar Contraseña:</label>
+                        <label for="password2">{% trans "Confirmar Contraseña:" %}</label>
                         <input
                           type="password"
                           class="form-control"
@@ -114,7 +116,7 @@
                           required
                         />
                     </div>
-                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                    <button type="submit" class="btn btn-primary">{% trans "Registrarse" %}</button>
                 </form>
 
                 <!--
@@ -168,8 +170,8 @@
                 -->
 
                 <!-- Fíjate cómo uso la ruta de Django para volver al login -->
-                <a href="{% url 'login' %}" class="text-decoration-none small text-info">¿Ya tienes una cuenta? Ingresa
-                    acá</a>
+                <a href="{% url 'login' %}" class="text-decoration-none small text-info">{% trans "¿Ya tienes una cuenta? Ingresa
+                    acá" %}</a>
             </div>
         </div>
     </div>
@@ -210,11 +212,11 @@
 
     <!-- FOOTER -->
     <footer class="mt-auto py-3 bg-black text-center border-top border-secondary text-secondary">
-        <p class="mb-1 small">© 2023 Hotel Pacific Reef. Todos los derechos reservados.</p>
+        <p class="mb-1 small">{% trans "© 2023 Hotel Pacific Reef. Todos los derechos reservados." %}</p>
         <p class="mb-1 small"><a href="mailto:accesorios@tienda.com"
-                class="text-decoration-none text-secondary">¡Contáctanos a través de nuestro email!</a></p>
-        <p class="mb-0 small"><a href="tel:+56912345678" class="text-decoration-none text-secondary">Llámanos al:
-                +56912345678</a></p>
+                class="text-decoration-none text-secondary">{% trans "¡Contáctanos a través de nuestro email!" %}</a></p>
+        <p class="mb-0 small"><a href="tel:+56912345678" class="text-decoration-none text-secondary">{% trans "Llámanos al:
+                +56912345678" %}</a></p>
     </footer>
 
 </body>
