@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="es">
@@ -6,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home-cliente</title>
+    <title>{% trans "Home-cliente" %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
@@ -25,9 +26,9 @@
             </button>
             <div class="collapse navbar-collapse bg-white" id="navBarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'perfil_cliente' %}">Mi Perfil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home_cliente' %}">{% trans "Inicio" %}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'perfil_cliente' %}">{% trans "Mi Perfil" %}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">{% trans "Cerrar Sesión" %}</a></li>
                 </ul>
             </div>
         </div>
@@ -36,16 +37,16 @@
     <!-- Sección principal -->
     <main class="container mt-5 pt-5">
         <div class="box shadow p-4">
-            <h1 class="text-center mb-4">Explora nuestras habitaciones</h1>
+            <h1 class="text-center mb-4">{% trans "Explora nuestras habitaciones" %}</h1>
             <div class="row row-cols-1 g-4">
                 <div class="col">
                     <div class="card">
                         <img src="{% static 'assets/suite1.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Habitación Turista 013</h5>
-                            <p class="card-text">3 noches, 2 adultos</p>
-                            <p class="card-text fw-bold">Precio original $250.000. Precio actual $225.000. Incluye impuestos y cargo de servicio</p>
-                            <a href="{% url 'detalle_habitacion' %}" class="btn btn-primary w-100">Disponibilidad</a>
+                            <h5 class="card-title">{% trans "Habitación Turista 013" %}</h5>
+                            <p class="card-text">{% trans "3 noches, 2 adultos" %}</p>
+                            <p class="card-text fw-bold">{% trans "Precio original $250.000. Precio actual $225.000. Incluye impuestos y cargo de servicio" %}</p>
+                            <a href="{% url 'detalle_habitacion' %}" class="btn btn-primary w-100">{% trans "Disponibilidad" %}</a>
                         </div>
                     </div>
                 </div>
@@ -53,10 +54,10 @@
                     <div class="card">
                         <img src="{% static 'assets/suite1.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Habitación Turista 015</h5>
-                            <p class="card-text">3 noches, 2 adultos</p>
-                            <p class="card-text fw-bold">Precio original $250.000. Precio actual $225.000. Incluye impuestos y cargo de servicio</p>
-                            <a href="{% url 'detalle_habitacion' %}" class="btn btn-primary w-100">Disponibilidad</a>
+                            <h5 class="card-title">{% trans "Habitación Turista 015" %}</h5>
+                            <p class="card-text">{% trans "3 noches, 2 adultos" %}</p>
+                            <p class="card-text fw-bold">{% trans "Precio original $250.000. Precio actual $225.000. Incluye impuestos y cargo de servicio" %}</p>
+                            <a href="{% url 'detalle_habitacion' %}" class="btn btn-primary w-100">{% trans "Disponibilidad" %}</a>
                         </div>
                     </div>
                 </div>
@@ -64,10 +65,10 @@
                     <div class="card">
                         <img src="{% static 'assets/suite1.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Habitación Turista 018</h5>
-                            <p class="card-text">3 noches, 2 adultos</p>
-                            <p class="card-text fw-bold">Precio original $250.000. Precio actual $225.000. Incluye impuestos y cargo de servicio</p>
-                            <a href="{% url 'detalle_habitacion' %}" class="btn btn-primary w-100">Disponibilidad</a>
+                            <h5 class="card-title">{% trans "Habitación Turista 018" %}</h5>
+                            <p class="card-text">{% trans "3 noches, 2 adultos" %}</p>
+                            <p class="card-text fw-bold">{% trans "Precio original $250.000. Precio actual $225.000. Incluye impuestos y cargo de servicio" %}</p>
+                            <a href="{% url 'detalle_habitacion' %}" class="btn btn-primary w-100">{% trans "Disponibilidad" %}</a>
                         </div>
                     </div>
                 </div>
@@ -75,10 +76,10 @@
                     <div class="card">
                         <img src="{% static 'assets/suite3.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Habitación Premium 030</h5>
-                            <p class="card-text">3 noches, 2 adultos</p>
-                            <p class="card-text fw-bold">Precio original $300.000. Precio actual $275.000. Incluye impuestos y cargo de servicio</p>
-                            <a href="{% url 'detalle_habitacion' %}" class="btn btn-primary w-100">Disponibilidad</a>
+                            <h5 class="card-title">{% trans "Habitación Premium 030" %}</h5>
+                            <p class="card-text">{% trans "3 noches, 2 adultos" %}</p>
+                            <p class="card-text fw-bold">{% trans "Precio original $300.000. Precio actual $275.000. Incluye impuestos y cargo de servicio" %}</p>
+                            <a href="{% url 'detalle_habitacion' %}" class="btn btn-primary w-100">{% trans "Disponibilidad" %}</a>
                         </div>
                     </div>
                 </div>
@@ -86,10 +87,10 @@
                     <div class="card">
                         <img src="{% static 'assets/suite3.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Habitación Premium 032</h5>
-                            <p class="card-text">3 noches, 2 adultos</p>
-                            <p class="card-text fw-bold">Precio original $300.000. Precio actual $275.000. Incluye impuestos y cargo de servicio</p>
-                            <a href="{% url 'detalle_habitacion' %}" class="btn btn-primary w-100">Disponibilidad</a>
+                            <h5 class="card-title">{% trans "Habitación Premium 032" %}</h5>
+                            <p class="card-text">{% trans "3 noches, 2 adultos" %}</p>
+                            <p class="card-text fw-bold">{% trans "Precio original $300.000. Precio actual $275.000. Incluye impuestos y cargo de servicio" %}</p>
+                            <a href="{% url 'detalle_habitacion' %}" class="btn btn-primary w-100">{% trans "Disponibilidad" %}</a>
                         </div>
                     </div>
                 </div>
@@ -99,10 +100,10 @@
 
     <!-- FOOTER -->
     <footer class="mt-5">
-        <p>© 2023 Hotel Pacific Reef. Todos los derechos reservados.</p>
-        <p><a href="mailto:accesorios@tienda.com" style="color: #ddd">¡Contáctanos a través de nuestro email!</a>
+        <p>{% trans "© 2023 Hotel Pacific Reef. Todos los derechos reservados." %}</p>
+        <p><a href="mailto:accesorios@tienda.com" style="color: #ddd">{% trans "¡Contáctanos a través de nuestro email!" %}</a>
         </p>
-        <p><a href="tel:+56912345678" style="color: #ddd">¡Y si prefieres una llamada!: +56912345678</a></p>
+        <p><a href="tel:+56912345678" style="color: #ddd">{% trans "¡Y si prefieres una llamada!: +56912345678" %}</a></p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

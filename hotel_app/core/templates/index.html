@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="es">
@@ -6,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index - Sistema Hotelero</title>
+    <title>{% trans "Index - Sistema Hotelero" %}</title>
     <!-- Conectamos el archivo CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -39,12 +40,12 @@
                 <!-- Idioma -->
                 <div class="dropdown">
                     <button id="idiomaBtn" class="btn btn-outline-light dropdown-toggle btn-sm" data-bs-toggle="dropdown">
-                        Español
+                        {% trans "Español" %}
                     </button>
 
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#" onclick="cambiarIdioma('Español')">Español</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="cambiarIdioma('English')">English</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="cambiarIdioma('Español')">{% trans "Español" %}</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="cambiarIdioma('English')">{% trans "English" %}</a></li>
                 </ul>
 
                 <script>
@@ -57,12 +58,12 @@
     
                 <!-- Ingreso -->
                 <a href="{% url 'login' %}" class="btn btn-outline-light btn-sm">
-                    Ingreso
+                    {% trans "Ingreso" %}
                 </a>
     
                 <!-- Registro -->
                 <a href="{% url 'registro' %}" class="btn btn-light btn-sm">
-                    Registro
+                    {% trans "Registro" %}
                 </a>
     
             </div>
@@ -73,14 +74,14 @@
     <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
 
         <!-- Título -->
-        <h2 class="mb-3 mt-5 pt-5">Bienvenidos</h2>
+        <h2 class="mb-3 mt-5 pt-5">{% trans "Bienvenidos" %}</h2>
 
         <!-- Logo -->
         <img src="{% static 'assets/iconos/icono1.png' %}" width="120" class="mb-3">
 
         <!-- Frase -->
         <div class="bg-light text-dark px-3 py-2 mb-4 rounded">
-            Más que un hotel, una experiencia
+            {% trans "Más que un hotel, una experiencia" %}
         </div>
 
         <!-- Card con imagen -->
@@ -93,11 +94,11 @@
         <div class="mt-4 w-100 d-flex flex-column align-items-center">
 
             <a href="#" class="btn btn-primary mb-3 w-75 rounded-pill">
-                Ingresa con Facebook
+                {% trans "Ingresa con Facebook" %}
             </a>
 
             <a href="#" class="btn btn-light w-75 rounded-pill">
-                Ingresa con Google
+                {% trans "Ingresa con Google" %}
             </a>
 
         </div>
