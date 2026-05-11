@@ -21,5 +21,5 @@ https://www.figma.com/design/dzAobutyNxOKzYDuTg2KZl/Hotel-Reservation-System--Co
 En el siguiente enlace se encuentra un archivo Excel con la Planilla de Testing:
 https://docs.google.com/spreadsheets/d/1SvoWMQutmfR5VdKDiNEYTsQY8oMZzgJF/edit?usp=sharing&ouid=101451696748147278398&rtpof=true&sd=true
 
-En el siguiente enlace se encuentra la carpeta drive de la semana 9, donde se encuentra el formato de respuesta, como también la versión final del documento ERS:
+En el siguiente enlace se encuentra la carpeta drive de la semana 9, donde se encuentra el formato de respuesta, como también la versión final del documento ERS. Además, se anexan todos los archivos Drive que fueron necesarios para el desarrollo de este Software:
 https://drive.google.com/drive/folders/1alSsCgzZRSdccHX1rxGy2EU6VZwgk6B6?usp=sharing
